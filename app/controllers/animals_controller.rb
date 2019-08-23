@@ -1,5 +1,5 @@
-module Api
-  module V1
+# module Api
+#   module V1
     class AnimalsController < ApplicationController
       def index
         @animals = Animal.all
@@ -38,5 +38,5 @@ module Api
         params.permit(:name, :species, :shelter)
       end
     end
-  end
-end
+#   end
+# end
