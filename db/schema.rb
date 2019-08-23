@@ -23,10 +23,4 @@ ActiveRecord::Schema.define(version: 2019_08_23_171230) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", force: :cascade do |t|
-    t.string "name"
-    t.string "species"
-    t.string "shelter"
-  end
-
 end
