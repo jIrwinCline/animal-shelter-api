@@ -1,30 +1,30 @@
 class AnimalsController < ApplicationController
   def index
-    @quotes = Quote.all
-    json_response(@quotes)
+    @animals = Animal.all
+    json_response(@animals)
   end
 
   def show
-    @quote = Quote.find(params[:id])
-    json_response(@quote)
+    @animal = Animal.find(params[:id])
+    json_response(@animal)
   end
 
   def create
-    @quote = Quote.create!(quote_params)
-    json_response(@quote, :created)
+    @animal = Animal.create!(animal_params)
+    json_response(@animal, :created)
   end
 
   def update
-    if @quote.update!(quote_params)
+    if @animal.update!(animal_params)
       render status: 200, json: {
-      message: "Your quote has been updated successfully."
+      message: "Your animal has been updated successfully."
       }
     end
   end
 
   def destroy
-    @quote = Quote.find(params[:id])
-    @quote.destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
   end
 
   private
@@ -32,7 +32,7 @@ class AnimalsController < ApplicationController
     render json: object, status: status
   end
 
-  def quote_params
-    params.permit(:author, :content)
+  def animal_params
+    params.permit(:name, :species, :shelter)
   end
 end
