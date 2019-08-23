@@ -8,6 +8,7 @@
 class Seed
 
   def self.begin
+    Animal.destroy_all
     seed = Seed.new
     seed.generate_animals
   end
@@ -20,7 +21,7 @@ class Seed
         name: Faker::Name.first_name ,
         species: Faker::Creature::Animal.name
       )
-      puts "Quote #{i}: Author is #{animal.author} and quotation is '#{animal.content}'."
+      puts "Located at #{animal.shelter}. #{animal.species} named #{animal.name}"
     end
   end
 end
