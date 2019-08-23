@@ -11,8 +11,17 @@ class Seed
     Animal.destroy_all
     seed = Seed.new
     seed.generate_animals
+    seed.generate_users
   end
 
+  def generate_users
+    user = User.create!(
+      email: "a@adopt.org",
+      name: "mike",
+      password_digest: "123456"
+    )
+    puts "Default User Created: email: #{user.email}, Name: #{user.name}, Password: #{user.password_digest}"
+  end
   def generate_animals
     20.times do |i|
       # shelter =

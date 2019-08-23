@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-      resources :animals
+  resources :animals
+  post 'authenticate', to: 'authentication#authenticate'
 end
