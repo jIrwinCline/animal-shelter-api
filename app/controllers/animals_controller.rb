@@ -61,6 +61,7 @@ class AnimalsController < ApplicationController
 
 
   def authorize_token
+    binding.pry
     if request.headers["HTTP_AUTHORIZATION"] && Token.find_by_token_hash(request.headers["HTTP_AUTHORIZATION"])
       true
     else
