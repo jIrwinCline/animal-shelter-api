@@ -1,6 +1,6 @@
 # module Api
 #   module V1
-class AnimalsController < ApplicationController
+class V1::AnimalsController < ApplicationController
   def index
     if authorize_token
       @animals = Animal.all

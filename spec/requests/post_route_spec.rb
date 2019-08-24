@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "post an animal route", :type => :request do
 
   before do
-    post '/animals', params: { :species => 'test_species', :shelter => 'test_shelter', :name => 'test_name' }, headers: {'HTTP_AUTHORIZATION' => "$2a$12$tER7Li3O4Bpa8anFPWSaneczW.Uv8GYzNRnXtvNlDa4zGGeRBngRW"}
+    post 'v1/animals', params: { :species => 'test_species', :shelter => 'test_shelter', :name => 'test_name' }
   end
 
   it 'returns the animals species' do
