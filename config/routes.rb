@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#login'
   post "/login", to: 'sessions#create'
   get '/register', to: 'users#new'
-  post 'register', to: 'users#create'
+  post '/register', to: 'users#create'
+  get '/random', to: 'animals#random'
 end
