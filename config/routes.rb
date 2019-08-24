@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/random', to: 'animals#random'
+  get '/species', to: 'animals#species'
 end

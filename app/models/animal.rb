@@ -4,4 +4,9 @@ class Animal < ApplicationRecord
   validates :shelter, presence: true
 
   scope :random, -> {order("RANDOM()").limit(1)}
+
+  def self.search_by_species(species)
+    species = species.downcase
+    self.where("lower(species) LIKE '%#{species}%'")
+  end
 end

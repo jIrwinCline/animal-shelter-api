@@ -1,8 +1,8 @@
 # module Api
 #   module V1
 class AnimalsController < ApplicationController
-    def index
-      if authorize_token
+  def index
+    if authorize_token
       @animals = Animal.all
       json_response(@animals)
     else
@@ -54,10 +54,22 @@ class AnimalsController < ApplicationController
     if authorize_token
       @animal = Animal.random
       json_response(@animal)
+
     else
       json_response({:message => "Use a token for access"})
     end
   end
+
+  def species
+    if authorize_token
+      species = params[:species]
+      @animals = Animal.search_by_species(species)
+      json_response(@animals)
+    else
+      json_response({:message => "Use a token for access"})
+    end
+  end
+
 
 
   def authorize_token
@@ -69,9 +81,9 @@ class AnimalsController < ApplicationController
     end
   end
 
-    def animal_params
-      params.permit(:name, :species, :shelter)
-    end
+  def animal_params
+    params.permit(:name, :species, :shelter)
   end
-  #   end
-  # end
+end
+#   end
+# end
