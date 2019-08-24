@@ -6,10 +6,20 @@ describe "get all animals route", :type => :request do
   before { get '/animals'}
 
   it 'returns all animals' do
-    expect(JSON.parse(response.body).size).to eq(20)
+    if authorize_token
+      expect(JSON.parse(response.body).size).to eq(20)
+    end
   end
 
   it 'returns status code 200' do
     expect(response).to have_http_status(:success)
+  end
+
+  def authorize_token
+    if request.headers["HTTP_AUTHORIZATION"] && Token.find_by_token_hash(request.headers["HTTP_AUTHORIZATION"])
+      true
+    else
+      false
+    end
   end
 end
