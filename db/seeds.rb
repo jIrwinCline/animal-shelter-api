@@ -16,11 +16,10 @@ class Seed
 
   def generate_users
     user = User.create!(
-      email: "a@adopt.org",
-      name: "mike",
-      password_digest: "123456"
+      username: "guy",
+      password_hash: "123456"
     )
-    puts "Default User Created: email: #{user.email}, Name: #{user.name}, Password: #{user.password_digest}"
+    puts "Default User Created: Name: #{user.username}, Password: #{user.password_hash}"
   end
   def generate_animals
     20.times do |i|

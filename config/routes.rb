@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :animals
+  root to: "sessions#login"
   post 'authenticate', to: 'authentication#authenticate'
   get '/login', to: 'sessions#login'
   post "/login", to: 'sessions#create'
