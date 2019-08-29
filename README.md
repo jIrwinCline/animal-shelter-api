@@ -1,15 +1,13 @@
 # README
 
-# _Possible Sequel_
+# _Animal Shelter API_
 
 
- _This game uses the movie database API called OMDB._
-
- **By _Nick Ramsey, Jacob Irwin, Abdellah Ramadan, Lake Bramlett, Daniel Hongel_**
+ **Jacob Irwin_**
 
 ## Description
 
-_A web-based game created using OMDB, a movies api. It takes common links between movies or shows, such as the same actor or location, and puts it upon the user to create the best fictional story linking those two movies._
+_An api built to navigate different animals being held at local shelters in the are._
 
 ## Setup/Installation Requirements
 
