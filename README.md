@@ -32,7 +32,7 @@ _An api built to navigate different animals being held at local shelters in the 
 
 
 _Link to GitHub repo:_
-[Animal-Shelter-API](https://github.com/jIrwinCline/possible-sequel.git)
+[Animal-Shelter-API](https://github.com/jIrwinCline/animal-shelter-api.git)
 
 ## Known Bugs
 
